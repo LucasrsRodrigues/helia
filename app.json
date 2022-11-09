@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "helia",
+    "slug": "helia",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
