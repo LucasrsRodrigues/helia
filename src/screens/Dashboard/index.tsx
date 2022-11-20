@@ -56,21 +56,25 @@ export function Dashboard() {
 
         <S.WrapperHighlights>
           <S.HighlightsCard source={{ uri: 'https://pousadasurucua.com.br/wp-content/uploads/2020/05/Quarto-Luxo-Qu%C3%A1druplo-do-Hotel-Pousada-Surucu%C3%A1-em-Bonito-MS.jpg' }}>
+            <S.HighlightOverlay colors={['transparent', 'rgba(0,0,0,0.8)']} />
             <S.HighlightsNote>
               <StarBold fill="#fff" width={RFValue(10)} height={RFValue(10)} />
               <S.Note>4.8</S.Note>
             </S.HighlightsNote>
 
-            <S.HighlightsData>
-              <S.HighlightsTitle>Emeralda De Hotel</S.HighlightsTitle>
-              <S.HighlightsLocale>Paris, France</S.HighlightsLocale>
-            </S.HighlightsData>
+            <S.HighlightsGroup>
+              <S.HighlightsData>
+                <S.HighlightsTitle>Emeralda De Hotel</S.HighlightsTitle>
+                <S.HighlightsLocale>Paris, France</S.HighlightsLocale>
+              </S.HighlightsData>
 
-            <S.HighlightValue>
-            </S.HighlightValue>
+              <S.HighlightValue>
+                <S.HighlightValueText>R$ 29</S.HighlightValueText>
+                <S.HighlightValueLorem>/ per night</S.HighlightValueLorem>
+              </S.HighlightValue>
+            </S.HighlightsGroup>
           </S.HighlightsCard>
         </S.WrapperHighlights>
-
       </S.DashboardContent>
     </S.DashboardContainer>
   );
