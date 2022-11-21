@@ -1,16 +1,15 @@
 import React from 'react';
 import LogoImg from '../../assets/logo/logo.png';
 
-import { BookmarkBold, BookmarkLight, FilterLight, NotificationLight, SearchLight, StarBold } from '../../assets/icons';
+import { BookmarkLight, FilterLight, NotificationLight, SearchLight } from '../../assets/icons';
 import { useTheme } from 'styled-components/native';
 import { HighlightsCard } from '../../components/HighlightsCard';
 import { filters, highlights, recentlyBooked } from '../../server';
 
-import * as S from './styles';
-import { RFValue } from 'react-native-responsive-fontsize';
 import { HotelCard } from '../../components/HotelCard';
 
-
+import * as S from './styles';
+import { RFValue } from 'react-native-responsive-fontsize';
 
 export function Dashboard() {
   const theme = useTheme();
@@ -26,11 +25,11 @@ export function Dashboard() {
 
           <S.HeaderButtons>
             <S.HeaderButton>
-              <NotificationLight width={28} height={28} />
+              <NotificationLight width={RFValue(28)} height={RFValue(28)} />
             </S.HeaderButton>
 
             <S.HeaderButton>
-              <BookmarkLight width={28} height={28} stroke="#000" />
+              <BookmarkLight width={RFValue(28)} height={RFValue(28)} stroke="#000" />
             </S.HeaderButton>
           </S.HeaderButtons>
         </S.Header>
@@ -40,9 +39,9 @@ export function Dashboard() {
         </S.HelloMessage>
 
         <S.InputSearch>
-          <SearchLight stroke={theme.colors.icon} />
+          <SearchLight width={RFValue(20)} height={RFValue(20)} stroke={theme.colors.icon} />
           <S.Input placeholder='Search' />
-          <FilterLight stroke={theme.colors.primary[500]} />
+          <FilterLight width={RFValue(20)} height={RFValue(20)} stroke={theme.colors.primary[500]} />
         </S.InputSearch>
 
         <S.WrapperFilterOptions horizontal showsHorizontalScrollIndicator={false}>

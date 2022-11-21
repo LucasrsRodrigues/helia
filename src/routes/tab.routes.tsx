@@ -30,6 +30,10 @@ export default function App() {
           fontSize: RFValue(10),
           fontFamily: theme.fonts.bold
         },
+        headerShown: false,
+        tabBarStyle: {
+          padding: 15
+        }
       })}
     >
       <Tab.Screen
