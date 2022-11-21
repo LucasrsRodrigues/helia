@@ -8,7 +8,7 @@ import { BookmarkBold, BookmarkLight, DocumentBold, DocumentLight, HomeBold, Hom
 
 const Tab = createBottomTabNavigator();
 
-export default function App() {
+export default function TabRoute() {
   const theme = useTheme();
   return (
     <Tab.Navigator

@@ -11,6 +11,10 @@ export const DashboardContent = styled.ScrollView`
   width: 100%;
 `;
 
+export const DashboardTouch = styled.KeyboardAvoidingView`
+  flex :1;
+`;
+
 export const Header = styled.View`
   width: 100%;
   flex-direction: row;

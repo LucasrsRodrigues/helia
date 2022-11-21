@@ -10,63 +10,69 @@ import { HotelCard } from '../../components/HotelCard';
 
 import * as S from './styles';
 import { RFValue } from 'react-native-responsive-fontsize';
+import { useNavigation } from '@react-navigation/native';
 
 export function Dashboard() {
   const theme = useTheme();
+  const { navigate } = useNavigation();
 
   return (
     <S.DashboardContainer>
       <S.DashboardContent>
-        <S.Header>
-          <S.WrapperLogo>
-            <S.LogoImage source={LogoImg} />
-            <S.Hero>Helia</S.Hero>
-          </S.WrapperLogo>
+        <S.DashboardTouch>
 
-          <S.HeaderButtons>
-            <S.HeaderButton>
-              <NotificationLight width={RFValue(28)} height={RFValue(28)} />
-            </S.HeaderButton>
+          <S.Header>
+            <S.WrapperLogo>
+              <S.LogoImage source={LogoImg} />
+              <S.Hero>Helia</S.Hero>
+            </S.WrapperLogo>
 
-            <S.HeaderButton>
-              <BookmarkLight width={RFValue(28)} height={RFValue(28)} stroke="#000" />
-            </S.HeaderButton>
-          </S.HeaderButtons>
-        </S.Header>
+            <S.HeaderButtons>
+              <S.HeaderButton onPress={() => navigate('Notifications')}>
+                <NotificationLight width={RFValue(28)} height={RFValue(28)} />
+              </S.HeaderButton>
 
-        <S.HelloMessage>
-          Hello, Lucas 👋
-        </S.HelloMessage>
+              <S.HeaderButton>
+                <BookmarkLight width={RFValue(28)} height={RFValue(28)} stroke="#000" />
+              </S.HeaderButton>
+            </S.HeaderButtons>
+          </S.Header>
 
-        <S.InputSearch>
-          <SearchLight width={RFValue(20)} height={RFValue(20)} stroke={theme.colors.icon} />
-          <S.Input placeholder='Search' />
-          <FilterLight width={RFValue(20)} height={RFValue(20)} stroke={theme.colors.primary[500]} />
-        </S.InputSearch>
+          <S.HelloMessage>
+            Hello, Lucas 👋
+          </S.HelloMessage>
 
-        <S.WrapperFilterOptions horizontal showsHorizontalScrollIndicator={false}>
-          {filters.map((value, index) => (
-            <S.FilterOption key={index}>
-              <S.FilterOptionText>{value}</S.FilterOptionText>
-            </S.FilterOption>
-          ))}
-        </S.WrapperFilterOptions>
+          <S.InputSearch>
+            <SearchLight width={RFValue(20)} height={RFValue(20)} stroke={theme.colors.icon} />
+            <S.Input placeholder='Search' />
+            <FilterLight width={RFValue(20)} height={RFValue(20)} stroke={theme.colors.primary[500]} />
+          </S.InputSearch>
 
-        <S.WrapperHighlights horizontal showsHorizontalScrollIndicator={false}>
-          {highlights.map(hotel => <HighlightsCard key={hotel.id} hotel={hotel} />)}
-        </S.WrapperHighlights>
+          <S.WrapperFilterOptions horizontal showsHorizontalScrollIndicator={false}>
+            {filters.map((value, index) => (
+              <S.FilterOption key={index}>
+                <S.FilterOptionText>{value}</S.FilterOptionText>
+              </S.FilterOption>
+            ))}
+          </S.WrapperFilterOptions>
 
-        <S.SectionBooked>
-          <S.SectionBookedHeader>
-            <S.SectionBookedTitle>Recently Booked</S.SectionBookedTitle>
-            <S.SectionBookedButton>
-              <S.SectionBookedButtonText>See All</S.SectionBookedButtonText>
-            </S.SectionBookedButton>
-          </S.SectionBookedHeader>
+          <S.WrapperHighlights horizontal showsHorizontalScrollIndicator={false}>
+            {highlights.map(hotel => <HighlightsCard key={hotel.id} hotel={hotel} />)}
+          </S.WrapperHighlights>
 
-          {recentlyBooked.map(hotel => <HotelCard key={hotel.id} hotel={hotel} />)}
+          <S.SectionBooked>
+            <S.SectionBookedHeader>
+              <S.SectionBookedTitle>Recently Booked</S.SectionBookedTitle>
+              <S.SectionBookedButton>
+                <S.SectionBookedButtonText>See All</S.SectionBookedButtonText>
+              </S.SectionBookedButton>
+            </S.SectionBookedHeader>
 
-        </S.SectionBooked>
+            {recentlyBooked.map(hotel => <HotelCard key={hotel.id} hotel={hotel} />)}
+
+          </S.SectionBooked>
+        </S.DashboardTouch>
+
       </S.DashboardContent>
     </S.DashboardContainer>
   );
