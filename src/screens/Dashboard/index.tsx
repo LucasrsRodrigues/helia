@@ -1,17 +1,16 @@
 import React from 'react';
 import LogoImg from '../../assets/logo/logo.png';
 
-import * as S from './styles';
-import { BookmarkLight, FilterLight, NotificationLight, SearchLight, StarBold } from '../../assets/icons';
+import { BookmarkBold, BookmarkLight, FilterLight, NotificationLight, SearchLight, StarBold } from '../../assets/icons';
 import { useTheme } from 'styled-components/native';
-import { RFValue } from 'react-native-responsive-fontsize';
+import { HighlightsCard } from '../../components/HighlightsCard';
+import { filters, highlights, recentlyBooked } from '../../server';
 
-let filters = [
-  'Recommended',
-  'Popular',
-  'Trending',
-  'Nearby'
-]
+import * as S from './styles';
+import { RFValue } from 'react-native-responsive-fontsize';
+import { HotelCard } from '../../components/HotelCard';
+
+
 
 export function Dashboard() {
   const theme = useTheme();
@@ -31,7 +30,7 @@ export function Dashboard() {
             </S.HeaderButton>
 
             <S.HeaderButton>
-              <BookmarkLight width={28} height={28} />
+              <BookmarkLight width={28} height={28} stroke="#000" />
             </S.HeaderButton>
           </S.HeaderButtons>
         </S.Header>
@@ -54,27 +53,21 @@ export function Dashboard() {
           ))}
         </S.WrapperFilterOptions>
 
-        <S.WrapperHighlights>
-          <S.HighlightsCard source={{ uri: 'https://pousadasurucua.com.br/wp-content/uploads/2020/05/Quarto-Luxo-Qu%C3%A1druplo-do-Hotel-Pousada-Surucu%C3%A1-em-Bonito-MS.jpg' }}>
-            <S.HighlightOverlay colors={['transparent', 'rgba(0,0,0,0.8)']} />
-            <S.HighlightsNote>
-              <StarBold fill="#fff" width={RFValue(10)} height={RFValue(10)} />
-              <S.Note>4.8</S.Note>
-            </S.HighlightsNote>
-
-            <S.HighlightsGroup>
-              <S.HighlightsData>
-                <S.HighlightsTitle>Emeralda De Hotel</S.HighlightsTitle>
-                <S.HighlightsLocale>Paris, France</S.HighlightsLocale>
-              </S.HighlightsData>
-
-              <S.HighlightValue>
-                <S.HighlightValueText>R$ 29</S.HighlightValueText>
-                <S.HighlightValueLorem>/ per night</S.HighlightValueLorem>
-              </S.HighlightValue>
-            </S.HighlightsGroup>
-          </S.HighlightsCard>
+        <S.WrapperHighlights horizontal showsHorizontalScrollIndicator={false}>
+          {highlights.map(hotel => <HighlightsCard key={hotel.id} hotel={hotel} />)}
         </S.WrapperHighlights>
+
+        <S.SectionBooked>
+          <S.SectionBookedHeader>
+            <S.SectionBookedTitle>Recently Booked</S.SectionBookedTitle>
+            <S.SectionBookedButton>
+              <S.SectionBookedButtonText>See All</S.SectionBookedButtonText>
+            </S.SectionBookedButton>
+          </S.SectionBookedHeader>
+
+          {recentlyBooked.map(hotel => <HotelCard key={hotel.id} hotel={hotel} />)}
+
+        </S.SectionBooked>
       </S.DashboardContent>
     </S.DashboardContainer>
   );

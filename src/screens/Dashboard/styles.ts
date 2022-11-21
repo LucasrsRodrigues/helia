@@ -108,77 +108,128 @@ export const FilterOptionText = styled.Text`
 
 // HighlightsCard
 export const WrapperHighlights = styled.ScrollView`
-  margin-left: 24px;
+  /* margin-left: 24px; */
   margin-top: 24px;
 `;
 
-export const HighlightOverlay = styled(LinearGradient)`
-  flex:1;
+// SectionBooked
+export const SectionBooked = styled.View`
+  width: 100%;
+  padding: 24px;
+
 `;
 
-export const HighlightsCard = styled.ImageBackground`
-  height: 400px;
-  width: 300px;
-  border-radius: 36px;
-  background:#000;
-  overflow: hidden;
-  position: relative;
-`;
-
-export const HighlightsNote = styled.View`
-  padding: 6px 16px;
-  background: ${({ theme }) => theme.colors.primary[500]};
-  border-radius: 100%;
-  
+export const SectionBookedHeader = styled.View`
   flex-direction: row;
   align-items: center;
-
-  position: absolute;
-  right: 10px;
-  top: 32px;
+  justify-content: space-between;
 `;
 
-export const Note = styled.Text`
-  font-size: ${RFValue(14)}px;
-  font-family: ${({ theme }) => theme.fonts.semibold};
-  color: #fff;
-`;
-
-export const HighlightsData = styled.View``;
-
-export const HighlightsGroup = styled.View`
-  position: absolute;
-  bottom: ${RFValue(15)}px;
-  left: ${RFValue(20)}px;
-`;
-
-export const HighlightsTitle = styled.Text`
+export const SectionBookedTitle = styled.Text`
   font-family: ${({ theme }) => theme.fonts.bold};
-  color: #fff;
-  font-size: ${RFValue(24)}px;
+  font-size: ${RFValue(18)}px;
+  color: ${({ theme }) => theme.colors.fonts.title};
 `;
 
-export const HighlightsLocale = styled.Text`
-  font-family: ${({ theme }) => theme.fonts.regular};
-  color: #fff;
+export const SectionBookedButton = styled.TouchableOpacity`
+
+`;
+
+export const SectionBookedButtonText = styled.Text`
+  font-family: ${({ theme }) => theme.fonts.bold};
   font-size: ${RFValue(16)}px;
-
-  margin: 8px 0;
+  color: ${({ theme }) => theme.colors.primary[500]};
 `;
 
-export const HighlightValue = styled.View`
+
+// HotelCard
+export const HotelCard = styled.View`
+  width: 100%;
+  padding: 20px;
+  border-radius: 16px;
+  background: ${({ theme }) => theme.colors.shape};
+
+  shadow-color: #000000;
+  shadow-offset: {width: 0, height: 7 };
+  shadow-opacity:  0.21;
+  shadow-radius: 8px;
+  elevation: 10;
+
+  margin-top: 20px;
+
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start;
+
+`;
+
+export const HotelCardInfos = styled.View`
   flex-direction: row;
   align-items: center;
 `;
 
-export const HighlightValueText = styled.Text`
-  font-size: ${RFValue(24)}px;
-  font-family: ${({ theme }) => theme.fonts.bold};
-  color: ${({ theme }) => theme.colors.others.white};
+export const HotelImage = styled.Image`
+  width: ${RFValue(80)}px;
+  height: ${RFValue(80)}px;
+  border-radius: ${RFValue(16)}px;
+  margin-right: 16px;
 `;
 
-export const HighlightValueLorem = styled.Text`
- font-size: ${RFValue(14)}px;
+export const HotelInfo = styled.View`
+`;
+
+export const HotelName = styled.Text`
+  font-size: ${RFValue(18)}px;
+  font-family: ${({ theme }) => theme.fonts.bold};
+  color: ${({ theme }) => theme.colors.fonts.title};
+`;
+
+export const HotelPlace = styled.Text`
+  font-size: ${RFValue(15)}px;
   font-family: ${({ theme }) => theme.fonts.regular};
-  color: ${({ theme }) => theme.colors.others.white};
+  color: ${({ theme }) => theme.colors.fonts.text};
+  margin: 10px 0;
+`;
+
+export const HotelWrapper = styled.View`
+  flex-direction: row;
+  align-items: center;
+`;
+
+export const HotelNote = styled.Text`
+  font-size: ${RFValue(11)}px;
+  font-family: ${({ theme }) => theme.fonts.semibold};
+  color: ${({ theme }) => theme.colors.primary[500]};
+`;
+
+export const HotelViewsCount = styled.Text`
+  font-size: ${RFValue(10)}px;
+  font-family: ${({ theme }) => theme.fonts.regular};
+  color: ${({ theme }) => theme.colors.fonts.text};
+  margin-left: 8px;
+`;
+
+export const HotelCardPrice = styled.View`
+  align-items: flex-end;
+  justify-content: space-between;
+`;
+
+export const HotelPriceWrapper = styled.View``;
+
+export const HotelCardValue = styled.Text`
+  font-size: ${RFValue(20)}px;
+  font-family: ${({ theme }) => theme.fonts.bold};
+  color: ${({ theme }) => theme.colors.primary[500]};
+`;
+
+export const HotelLorem = styled.Text`
+  font-size: ${RFValue(10)}px;
+  font-family: ${({ theme }) => theme.fonts.regular};
+  color: ${({ theme }) => theme.colors.fonts.text};
+  text-align: right;
+`;
+
+export const HotelIsFavoriteButton = styled.TouchableOpacity`
+  margin-top: 19px;
 `;

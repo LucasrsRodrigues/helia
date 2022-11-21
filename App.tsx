@@ -13,6 +13,7 @@ import {
   Urbanist_400Regular
 } from '@expo-google-fonts/urbanist';
 import { SplashScreen } from './src/screens/SplashScreen';
+import { Routes } from './src/routes';
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -28,7 +29,8 @@ export default function App() {
 
   return (
     <ThemeProvider theme={lightTheme}>
-      <Dashboard />
+      {/* <Dashboard /> */}
+      <Routes />
     </ThemeProvider>
   );
 }

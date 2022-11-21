@@ -22,11 +22,12 @@ export default {
       title: '#212121',
       text: '#616161',
     },
-    icon: '#BDBDBD',
-    background: '#FFFFFF',
     others: {
       white: '#fff'
-    }
+    },
+    icon: '#BDBDBD',
+    background: '#FFFFFF',
+    shape: '#FFFF'
   },
   fonts: {
     bold: 'Urbanist_700Bold',
