@@ -8,9 +8,10 @@ import { filters, highlights, recentlyBooked } from '../../server';
 
 import { HotelCard } from '../../components/HotelCard';
 
-import * as S from './styles';
 import { RFValue } from 'react-native-responsive-fontsize';
 import { useNavigation } from '@react-navigation/native';
+
+import * as S from './styles';
 
 export function Dashboard() {
   const theme = useTheme();

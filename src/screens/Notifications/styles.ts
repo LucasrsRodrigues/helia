@@ -44,11 +44,13 @@ export const NotificationCard = styled.View`
   elevation: 10;
 
   margin-top: 24px;
-  border-radius: ${16}px;
+  margin-bottom: 24px;
 
+  border-radius: ${16}px;
 
   flex-direction: row;
   align-items: center;
+  
 `;
 
 export const NotificationWrapper = styled.View`
