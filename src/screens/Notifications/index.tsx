@@ -10,6 +10,7 @@ import ValidationSvg from '../../assets/notifications/2step.svg';
 import { notifications } from '../../server';
 
 import * as S from './styles';
+import { useNavigation } from '@react-navigation/native';
 
 function RenderIcon(type: string) {
   switch (type) {
@@ -31,10 +32,12 @@ function RenderIcon(type: string) {
 }
 
 export function Notifications() {
+  const { goBack } = useNavigation();
+
   return (
     <S.NotificationsContainer>
       <S.NotificationsHeader>
-        <S.NotificationsButton>
+        <S.NotificationsButton onPress={goBack}>
           <ArrowLeftLight width={RFValue(28)} height={RFValue(28)} />
         </S.NotificationsButton>
 

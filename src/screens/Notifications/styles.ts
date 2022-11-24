@@ -11,7 +11,7 @@ export const NotificationsHeader = styled.View`
   align-items: center;
   width: 100%;
 
-  padding: ${RFValue(24)}px;
+  padding:0  ${RFValue(24)}px;
 `;
 
 export const NotificationsButton = styled.TouchableOpacity``;

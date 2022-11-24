@@ -19,7 +19,7 @@ export function Dashboard() {
 
   return (
     <S.DashboardContainer>
-      <S.DashboardContent>
+      <S.DashboardContent showsVerticalScrollIndicator={false}>
         <S.DashboardTouch>
 
           <S.Header>
@@ -33,7 +33,7 @@ export function Dashboard() {
                 <NotificationLight width={RFValue(28)} height={RFValue(28)} />
               </S.HeaderButton>
 
-              <S.HeaderButton>
+              <S.HeaderButton onPress={() => navigate('Bookmarks')}>
                 <BookmarkLight width={RFValue(28)} height={RFValue(28)} stroke="#000" />
               </S.HeaderButton>
             </S.HeaderButtons>

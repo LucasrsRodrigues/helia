@@ -41,3 +41,52 @@ export const recentlyBooked = [
     isFavorite: false
   },
 ];
+
+
+export const bookmark = [
+  {
+    id: "0",
+    note: "4.8",
+    title: "President Mila De Hotel",
+    image: "https://www.pousadadoschas.com.br/blog/wp-content/uploads/2020/12/142.jpeg",
+    locale: "Paris, France",
+    value: 35,
+    isFavorite: true
+  },
+  {
+    id: "1",
+    note: "4.7",
+    title: "Palazzo Versace Pico Hotel",
+    image: "https://www.hotel-lordbyron.com/_novaimg/galleria/1403152.jpg",
+    locale: "Rome, Italia",
+    value: 36,
+    isFavorite: true
+  },
+  {
+    id: "2",
+    note: "4.9",
+    title: "Faena Hotel Miami Beach",
+    image: "https://www.hotel-lordbyron.com/_novaimg/galleria/1403152.jpg",
+    locale: "London, UK",
+    value: 38,
+    isFavorite: true
+  },
+  {
+    id: "3",
+    note: "4.6",
+    title: "De Paris Monte-Carlo Hotel",
+    image: "https://mab-art.com.br/wp-content/uploads/2019/09/como-decorar-quartos-de-hotel.jpg",
+    locale: "Istanbul, Turkiye",
+    value: 29,
+    isFavorite: true
+  },
+  {
+    id: "4",
+    note: "4.8",
+    title: "Grand Resort Lagonissi",
+    image: "https://mab-art.com.br/wp-content/uploads/2019/09/como-decorar-quartos-de-hotel.jpg",
+    locale: "Zurich, Swiss",
+    value: 33,
+    isFavorite: true
+  },
+];
