@@ -24,6 +24,7 @@ import OpenIcon from '../../assets/facilites/open.png';
 import * as S from './styles';
 import MapImage from '../../assets/map.png';
 import { comments } from '../../server';
+import { ReviewCard } from '../../components/ReviewCard';
 
 const data = [
   {
@@ -69,7 +70,7 @@ const data = [
 ];
 
 export function HotelDetails() {
-  const { goBack } = useNavigation();
+  const { goBack, navigate } = useNavigation();
   const theme = useTheme();
 
   return (
@@ -109,7 +110,7 @@ export function HotelDetails() {
 
           <S.PhotosSectionHeader>
             <S.HotelDetailsSectionTitle>Gallery Photos</S.HotelDetailsSectionTitle>
-            <S.PhotosSectionButton activeOpacity={0.9}>
+            <S.PhotosSectionButton activeOpacity={0.9} onPress={() => navigate('GalleryPhotos')}>
               <S.PhotosSectionButtonText>See All</S.PhotosSectionButtonText>
             </S.PhotosSectionButton>
           </S.PhotosSectionHeader>
@@ -200,31 +201,13 @@ export function HotelDetails() {
             </S.HotelReviewLeft>
 
 
-            <S.HotelsButton>
+            <S.HotelsButton onPress={() => navigate('DetailReview')}>
               <S.HotelsButtonText>See All</S.HotelsButtonText>
             </S.HotelsButton>
           </S.HotelReviewHeader>
 
           {comments.map(comment => (
-            <S.ReviewCard>
-              <S.ReviewCardHeader>
-                <S.ReviewCardImage source={{ uri: comment.image }} />
-
-                <S.ReviewCardInfo>
-                  <S.ReviewCardName>{comment.name}</S.ReviewCardName>
-                  <S.ReviewCardDate>{comment.date}</S.ReviewCardDate>
-                </S.ReviewCardInfo>
-
-                <S.ReviewCardButton>
-                  <StarBold fill="#fff" width={RFValue(10)} height={RFValue(9.5)} />
-                  <S.ReviewCardNumber>{comment.note}</S.ReviewCardNumber>
-                </S.ReviewCardButton>
-              </S.ReviewCardHeader>
-
-              <S.ReviewCardComment>
-                {comment.comment}
-              </S.ReviewCardComment>
-            </S.ReviewCard>
+            <ReviewCard review={comment} />
           ))}
 
           <S.ViewMoreButton>

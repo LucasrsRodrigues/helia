@@ -38,7 +38,7 @@ export function Notifications() {
     <S.NotificationsContainer>
       <S.NotificationsHeader>
         <S.NotificationsButton onPress={goBack}>
-          <ArrowLeftLight width={RFValue(28)} height={RFValue(28)} />
+          <ArrowLeftLight width={RFValue(28)} height={RFValue(28)} stroke="#000" />
         </S.NotificationsButton>
 
         <S.NotificationsTitle>
@@ -46,7 +46,7 @@ export function Notifications() {
         </S.NotificationsTitle>
 
         <S.NotificationsButton>
-          <MoreCircleLight width={RFValue(28)} height={RFValue(28)} />
+          <MoreCircleLight width={RFValue(28)} height={RFValue(28)} stroke="#000" />
         </S.NotificationsButton>
       </S.NotificationsHeader>
 
