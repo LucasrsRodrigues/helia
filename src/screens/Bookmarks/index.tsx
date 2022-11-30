@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FlatList } from 'react-native';
+import { FlatList, StatusBar } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { RFValue } from 'react-native-responsive-fontsize';
 import { ArrowLeftLight, CategoryBold, DocumentLight } from '../../assets/icons';
@@ -19,9 +19,11 @@ export function Bookmarks() {
 
   return (
     <S.BookmarksContainer>
+      <StatusBar barStyle='dark-content' />
+
       <S.BookmarksHeader>
         <S.BookmarksButton onPress={goBack}>
-          <ArrowLeftLight width={RFValue(28)} height={RFValue(28)} />
+          <ArrowLeftLight width={RFValue(28)} height={RFValue(28)} stroke="#000" />
         </S.BookmarksButton>
 
         <S.BookmarksTitle>

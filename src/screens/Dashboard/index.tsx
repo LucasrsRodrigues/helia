@@ -12,6 +12,7 @@ import { RFValue } from 'react-native-responsive-fontsize';
 import { useNavigation } from '@react-navigation/native';
 
 import * as S from './styles';
+import { StatusBar } from 'react-native';
 
 export function Dashboard() {
   const theme = useTheme();
@@ -19,6 +20,7 @@ export function Dashboard() {
 
   return (
     <S.DashboardContainer>
+      <StatusBar barStyle='dark-content' />
       <S.DashboardContent showsVerticalScrollIndicator={false}>
         <S.DashboardTouch>
 
