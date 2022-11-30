@@ -6,6 +6,8 @@ export const HighlightOverlay = styled(LinearGradient)`
   flex:1;
 `;
 
+export const HighlightWrapperButton = styled.TouchableOpacity``;
+
 export const HighlightsCard = styled.ImageBackground`
   height: ${RFValue(400)}px;
   width: ${RFValue(300)}px;

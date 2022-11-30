@@ -4,6 +4,9 @@ import { ThemeProvider } from 'styled-components/native';
 import { Dashboard } from './src/screens/Dashboard';
 import { Profile } from './src/screens/Profile';
 
+import { LogBox } from 'react-native';
+
+
 import lightTheme from './src/global/styles/light.theme';
 
 import {
@@ -27,6 +30,10 @@ export default function App() {
   if (!fontsLoaded) {
     return <SplashScreen />
   }
+
+  // Ignorar warnings
+  LogBox.ignoreLogs(['Warning: ...']);
+  LogBox.ignoreAllLogs();
 
   return (
     <ThemeProvider theme={lightTheme}>

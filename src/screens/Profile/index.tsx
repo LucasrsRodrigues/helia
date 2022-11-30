@@ -3,7 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import logo from '../../assets/logo/logo.png';
 
 import * as S from './styles';
-import { EditSquare } from '../../assets/icons';
+import { EditSquareLight } from '../../assets/icons';
 
 export function Profile() {
   return (
@@ -22,7 +22,7 @@ export function Profile() {
         <S.ProfileUser>
           <S.ProfilePicture source={{ uri: 'https://github.com/LucasrsRodrigues.png' }} />
           <S.ProfileEditButton>
-            <EditSquare fill="#1AB65C" width={30} height={30} />
+            <EditSquareLight fill="#1AB65C" width={30} height={30} />
           </S.ProfileEditButton>
         </S.ProfileUser>
       </S.ProfileWrapperData>

@@ -4,6 +4,7 @@ import { Dashboard } from '../screens/Dashboard';
 import { useTheme } from 'styled-components/native';
 import { RFValue } from 'react-native-responsive-fontsize';
 import { BookmarkBold, BookmarkLight, DocumentBold, DocumentLight, HomeBold, HomeLight, ProfileBold, ProfileLight, SearchBold, SearchLight } from '../assets/icons';
+import { Profile } from '../screens/Profile';
 
 
 const Tab = createBottomTabNavigator();
@@ -13,18 +14,6 @@ export default function TabRoute() {
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
-        tabBarIcon: ({ focused, color, size }) => {
-          let iconName;
-
-          if (route.name === 'Home') {
-            iconName = focused
-              ? 'ios-information-circle'
-              : 'ios-information-circle-outline';
-          } else if (route.name === 'Settings') {
-            iconName = focused ? 'ios-list' : 'ios-list-outline';
-          }
-
-        },
         tabBarActiveTintColor: theme.colors.primary[500],
         tabBarLabelStyle: {
           fontSize: RFValue(10),
@@ -44,7 +33,7 @@ export default function TabRoute() {
             return focused ? (
               <HomeBold fill={theme.colors.primary[500]} />
             ) : (
-              <HomeLight />
+              <HomeLight stroke={theme.colors.icon} />
             );
           },
           tabBarLabelStyle: {
@@ -86,7 +75,7 @@ export default function TabRoute() {
       />
       <Tab.Screen
         name="Profile"
-        component={Dashboard}
+        component={Profile}
         options={{
           tabBarIcon: ({ focused }) => {
             return focused ? (

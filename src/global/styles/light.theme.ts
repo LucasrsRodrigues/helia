@@ -23,7 +23,8 @@ export default {
       text: '#616161',
     },
     others: {
-      white: '#fff'
+      white: '#fff',
+      gray100: '#eeeeee'
     },
     icon: '#BDBDBD',
     background: '#FFFFFF',

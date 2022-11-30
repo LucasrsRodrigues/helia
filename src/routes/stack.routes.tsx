@@ -1,5 +1,6 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import { Bookmarks } from '../screens/Bookmarks';
+import { HotelDetails } from '../screens/HotelDetails';
 import { Notifications } from '../screens/Notifications';
 import TabRoute from './tab.routes';
 
@@ -13,6 +14,7 @@ function StackRoute() {
       <Screen name="Dashboard" component={TabRoute} />
       <Screen name="Notifications" component={Notifications} />
       <Screen name="Bookmarks" component={Bookmarks} />
+      <Screen name="HotelDetails" component={HotelDetails} />
     </Navigator>
   );
 }
